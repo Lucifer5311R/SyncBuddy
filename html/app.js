@@ -87,7 +87,7 @@ function loadTimetable() {
 // ================== ANNOUNCEMENTS ==================
 function requestAccess() {
     const code = prompt("Enter unique code:");
-    if (code === "keets") {
+    if (code === "christ") {
         document.getElementById("addANBtn").style.display = "none";
         document.getElementById("announcement-input").classList.remove("hidden");
         document.getElementById("ANType").style.display = "block";
