@@ -6,6 +6,8 @@
     <title>Student Productivity Tool</title>
     <link rel="stylesheet" href="/css/styles.css">
     <script defer src="/js/darkmode.js"></script>
+    <script defer src="/js/announcements.js"></script>
+    <script defer src="/js/todolist.js"></script>
 </head>
 <body>
     <header>
@@ -42,7 +44,7 @@
             </div>
 
             <!-- Hidden Announcement Input -->
-            <div id="announcement-input">
+            <div id="announcement-input" class="hidden">
                 <select id="ANType" onchange="showInputBox()" aria-label="Select announcement type">
                     <option value="">Select Type</option>
                     <option value="reminder">Reminder</option>
@@ -50,10 +52,19 @@
                     <option value="general">General</option>
                 </select>
 
-                <input type="text" id="ANI" placeholder="Enter announcement..." class="hidden" aria-label="Enter announcement">
+                <textarea id="ANI" placeholder="Enter announcement..." class="hidden" aria-label="Enter announcement"></textarea>
+                <input type="datetime-local" id="scheduleInput" class="hidden" aria-label="Schedule announcement">
+                <input type="file" id="attachmentInput" class="hidden" aria-label="Attach file">
+                <select id="recurringInput" class="hidden" aria-label="Select recurring option">
+                    <option value="none">None</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
                 <button id="addANBtnFinal" onclick="addAnnouncement()" class="hidden" aria-label="Add announcement">Add</button>
             </div>
 
+            <input type="text" id="searchInput" placeholder="Search announcements..." oninput="searchAnnouncements()">
             <ul id="ANList"></ul>
         </section>
 
@@ -73,7 +84,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Student Productivity Tool. All rights reserved.</p>
+        <p>&copy; 2025 What's Next . All rights reserved.</p>
     </footer>
     
     <script src="/js/app.js"></script>
